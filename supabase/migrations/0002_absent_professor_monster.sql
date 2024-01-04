@@ -1,0 +1,1 @@
+ALTER TABLE "episodes" ADD COLUMN "author_name" varchar NOT NULL;

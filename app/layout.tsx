@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Playpen_Sans } from "next/font/google";
 import "./globals.css";
 
+import { Provider } from "./_trpc/provider";
+
 const inter = Inter({ subsets: ["latin"] });
 const playpenSans = Playpen_Sans({
   subsets: ["latin"],
@@ -27,21 +29,23 @@ export default function RootLayout({
           "bg-gradient-to-br from-slate-200 to-slate-100 min-h-screen",
         ].join(" ")}
       >
-        <div className="p-10">
-          <div className="mx-auto max-w-3xl h-full flex flex-col gap-4">
-            <div className="flex justify-between font-playpen">
-              <div>This is Fine / Episode 2</div>
-              <div className="flex gap-5">
-                <div>Home</div>
-                <div>Share a story</div>
+        <Provider>
+          <div className="p-10">
+            <div className="mx-auto max-w-3xl h-full flex flex-col gap-4">
+              <div className="flex justify-between font-playpen">
+                <div>This is Fine / Episode 2</div>
+                <div className="flex gap-5">
+                  <div>Home</div>
+                  <div>Share a story</div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-x-6 gap-y-8 mt-10">
+                {children}
               </div>
             </div>
-
-            <div className="grid grid-cols-2 gap-x-6 gap-y-8 mt-10">
-              {children}
-            </div>
           </div>
-        </div>
+        </Provider>
       </body>
     </html>
   );
