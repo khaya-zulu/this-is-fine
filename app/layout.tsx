@@ -37,7 +37,9 @@ export default function RootLayout({
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-6 mt-8">{children}</div>
+            <div className="grid grid-cols-2 gap-x-6 gap-y-8 mt-10">
+              {children}
+            </div>
           </div>
         </div>
       </body>
