@@ -11,10 +11,10 @@ export const tableEpisodes = pgTable("episodes", {
     .$defaultFn(() => createId()),
   title: varchar("title").notNull(),
   index: integer("index").notNull(),
-  youtube_url: varchar("video").notNull(),
+  youtube_url: varchar("youtube_url").notNull(),
   // bucket/key.
   thumbnailPath: varchar("thumbnail_path").notNull(),
-  guestName: varchar("author_name").notNull(),
+  guestName: varchar("guest_name").notNull(),
 });
 
 export const episodesRelations = relations(tableEpisodes, ({ many }) => ({
@@ -26,7 +26,9 @@ export const tableActions = pgTable("actions", {
     .notNull()
     .primaryKey()
     .$defaultFn(() => createId()),
-  episode_id: varchar("episode_id").notNull(),
+  episode_id: varchar("episode_id")
+    .notNull()
+    .references(() => tableEpisodes.id),
   userId: varchar("user_id"),
   type: actionTypesEnum("type").notNull(),
 });

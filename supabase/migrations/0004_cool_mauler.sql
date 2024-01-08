@@ -1,0 +1,1 @@
+ALTER TABLE "episodes" RENAME COLUMN "video" TO "youtube_url";

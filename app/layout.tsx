@@ -26,21 +26,24 @@ export default function RootLayout({
         className={[
           inter.className,
           `${playpenSans.variable} font-sans`,
-          "bg-gradient-to-br from-slate-200 to-slate-100 min-h-screen",
+          "bg-teal-800 min-h-screen",
         ].join(" ")}
+        style={{
+          backgroundImage: `url(https://www.transparenttextures.com/patterns/back-pattern.png)`,
+        }}
       >
         <Provider>
           <div className="p-10">
             <div className="mx-auto max-w-3xl h-full flex flex-col gap-4">
-              <div className="flex justify-between font-playpen">
-                <div>This is Fine / Episode 2</div>
+              <div className="flex justify-between font-playpen text-white">
+                <div className="p-2">This is Fine / Episode 2</div>
                 <div className="flex gap-5">
-                  <div>Home</div>
-                  <div>Share a story</div>
+                  <div className="p-2 border-b-4 border-teal-200">Home</div>
+                  <div className="p-2">Share a story</div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-x-6 gap-y-8 mt-10">
+              <div className="grid grid-cols-2 gap-x-6 gap-y-14 mt-12">
                 {children}
               </div>
             </div>

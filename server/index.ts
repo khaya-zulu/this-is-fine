@@ -36,6 +36,7 @@ export const appRouter = router({
           views: actions.find((a) => a.type === "view")?.count ?? 0,
           likes: actions.find((a) => a.type === "like")?.count ?? 0,
           youtubeUrl: epi.youtube_url,
+          guestName: epi.guestName,
         };
       })
     );

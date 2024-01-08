@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate": "drizzle-kit generate:pg && supabase db reset"
+    "migrate": "drizzle-kit generate:pg && snaplet generate",
+    "generate-seed": "npx tsx seed.mts > supabase/seed.sql",
+    "seed-db": "pnpm run generate-seed && supabase db reset"
   },
   "dependencies": {
     "@paralleldrive/cuid2": "2.2.2",
@@ -23,6 +25,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@snaplet/seed": "^0.78.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -32,7 +35,10 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
+    "snaplet": "^0.78.1",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "uuid": "9.0.1",
+    "@snaplet/copycat": "2.0.0-rc.1"
   }
 }
