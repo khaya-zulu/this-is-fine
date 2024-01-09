@@ -3,6 +3,7 @@ import { Inter, Playpen_Sans } from "next/font/google";
 import "./globals.css";
 
 import { Provider } from "./_trpc/provider";
+import { Navbar } from "~/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 const playpenSans = Playpen_Sans({
@@ -26,7 +27,7 @@ export default function RootLayout({
         className={[
           inter.className,
           `${playpenSans.variable} font-sans`,
-          "bg-teal-800 min-h-screen",
+          "min-h-screen",
         ].join(" ")}
         style={{
           backgroundImage: `url(https://www.transparenttextures.com/patterns/back-pattern.png)`,
@@ -35,13 +36,7 @@ export default function RootLayout({
         <Provider>
           <div className="p-10">
             <div className="mx-auto max-w-3xl h-full flex flex-col gap-4">
-              <div className="flex justify-between font-playpen text-white">
-                <div className="p-2">This is Fine / Episode 2</div>
-                <div className="flex gap-5">
-                  <div className="p-2 border-b-4 border-teal-200">Home</div>
-                  <div className="p-2">Share a story</div>
-                </div>
-              </div>
+              <Navbar />
 
               <div className="grid grid-cols-2 gap-x-6 gap-y-14 mt-12">
                 {children}

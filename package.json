@@ -1,5 +1,5 @@
 {
-  "name": "hikers-news",
+  "name": "this-is-fine",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -22,7 +22,8 @@
     "next": "14.0.4",
     "postgres": "3.4.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "zod": "3.22.4"
   },
   "devDependencies": {
     "@snaplet/seed": "^0.78.1",

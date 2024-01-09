@@ -1,6 +1,6 @@
 # A string used to distinguish different Supabase projects on the same host. Defaults to the
 # working directory name when running `supabase init`.
-project_id = "hikers-news"
+project_id = "this-is-fine"
 
 [api]
 enabled = true
@@ -125,6 +125,13 @@ redirect_uri = ""
 # Overrides the default auth provider URL. Used to support self-hosted gitlab, single-tenant Azure,
 # or any other third-party OIDC providers.
 url = ""
+
+[auth.external.github]
+enabled = true
+client_id = "env(GITHUB_CLIENT_ID)"
+secret = "env(GITHUB_SECRET)"
+redirect_uri = "http://localhost:54321/auth/v1/callback"
+
 
 [analytics]
 enabled = false
